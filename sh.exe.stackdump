@@ -1,0 +1,10 @@
+MSYS-1.0.12 Build:2012-07-05 14:56
+Exception: STATUS_ACCESS_VIOLATION at eip=6801364A
+eax=0000500D ebx=0000500D ecx=76E3A4F8 edx=00820178 esi=0028FBFC edi=0028F7FC
+ebp=0028F66C esp=0028F654 program=C:\Users\Fedya\AppData\Local\GitHub\PortableGit_c2ba306e536fdf878271f7fe636a147ff37326ad\bin\sh.exe
+cs=0023 ds=002B es=002B fs=0053 gs=002B ss=002B
+Stack trace:
+Frame     Function  Args
+0028F66C  6801364A  (0000500D, 00000000, 00110000, 00000000)
+  16459 [main] sh 6664 handle_exceptions: Exception: STATUS_ACCESS_VIOLATION
+  16975 [main] sh 6664 handle_exceptions: Error while dumping state (probably corrupted stack)
