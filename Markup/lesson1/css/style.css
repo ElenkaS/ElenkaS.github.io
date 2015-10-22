@@ -37,7 +37,7 @@ h3 {
 }
 
 .work {
-		margin: 18px 0px 0px;
+	margin: 18px 0px 0px;
 }
 
 .content {
@@ -52,10 +52,10 @@ h3 {
 	list-style-position: inside;
 	padding-left: 12px;
 	margin-top: 38px;
-	}
+}
 
 a {
-	color: 0000ee;
+	color: #0000ee;
 }
 
 .contacts {
