@@ -51,6 +51,7 @@ span {
 	padding-right: 25px;
 }
 
+
 .fs_10 {
 	font-size: 10px;
 }
@@ -59,25 +60,18 @@ span {
 	min-height: 610px;
 	overflow: hidden;
 	margin-bottom: 20px;
-	width: 815px;
+	text-align: center;
 }
 
-.line {
-	overflow: hidden;
-	margin-bottom: 50px;
-}
-
-.line:after {
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
+.content img {
+	border: 2px solid #aaaaaa;
 }
 
 .photo {
 	float: left;
 	text-align: center;
+	margin-bottom: 50px;
+	
 }
 
 .photo img {
@@ -89,6 +83,10 @@ span {
 	margin-left: 11px;
 }
 
+.no-marg{
+	margin-right: 0px;
+}
+
 .photo a {
 	font: 14px Tahoma;
 	line-height: 15px;
@@ -98,6 +96,27 @@ span {
 	height: 100%;
 	text-align: center;
 }
+
 .footer span {
+	line-height: 15px;
+}
+
+
+/* special styles for Index1.html */
+
+.content ul{
+	overflow: hidden;
+}
+
+.content li{
+	display: inline-block;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 50px;
+	} 
+
+.content li a{
+	display: block;
+	font: 14px Tahoma;
 	line-height: 15px;
 }
