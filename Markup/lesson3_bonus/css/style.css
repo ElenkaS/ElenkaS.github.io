@@ -1,0 +1,103 @@
+@import url(reset.css);
+
+body {
+	background-color: #0b0b0b;
+}
+
+a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+span {
+	font-family: Arial;
+	font-size: 11px;
+}
+
+.wrapper {
+	width: 822px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 135px 69px 30px;
+	background-image: url(../img/palm.png), url(../img/backgr.jpg);
+	background-repeat: no-repeat, repeat-y;
+	background-position: 205px 57px, top;
+	color: white;
+}
+
+.header {
+	margin-bottom: 10px;
+}
+
+.header:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+
+}
+
+.logo {
+	width: 270px;
+	text-align: center;
+	float: left;
+}
+
+.contact {
+	float: right;
+	font: 11px Tahoma;
+	line-height: 18px;
+	padding-right: 25px;
+}
+
+.fs_10 {
+	font-size: 10px;
+}
+
+.content {
+	min-height: 610px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	width: 815px;
+}
+
+.line {
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+
+.line:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.photo {
+	float: left;
+	text-align: center;
+}
+
+.photo img {
+	border: 2px solid #aaaaaa;
+}
+
+.marg11 {
+	margin-right: 11px;
+	margin-left: 11px;
+}
+
+.photo a {
+	font: 14px Tahoma;
+	line-height: 15px;
+}
+
+.footer {
+	height: 100%;
+	text-align: center;
+}
+.footer span {
+	line-height: 15px;
+}
