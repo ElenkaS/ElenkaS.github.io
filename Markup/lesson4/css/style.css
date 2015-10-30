@@ -1,0 +1,264 @@
+@import url(reset.css);
+
+body {
+	padding-top: 37px;
+	padding-bottom: 32px;
+	background-image: url(../img/bgr.jpg), url(../img/bg_1.jpg);
+	background-position: top left, 0px 1060px;
+	background-repeat: repeat-x, repeat;
+}
+
+.wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 5px; 
+	min-height: 965px;
+	background-color: #ffffff;
+	-webkit-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.75);
+}
+
+/*HEADER*/
+
+.header {
+	padding: 0px 30px 0px;
+	background: url(../img/palm.jpg) 167px no-repeat;
+	position: relative;
+	overflow: hidden;
+}
+
+.logo {
+	padding: 45px 0px 0px 0px;
+	float: left;
+	text-align: center;
+}
+
+.logo a {
+		color: #128aa7;
+		font: 12px Tahoma;
+}
+
+.fl-r {
+	float: right;
+	padding-bottom: 8px;
+}
+
+.contacts {
+	margin-bottom: 27px;
+	float: right;
+	font: 11px Tahoma;
+	color:  #1387a3;
+	line-height: 20px;
+}
+
+.contacts span {
+	font-weight: bold;
+}
+
+.contacts a {
+	color:  #1387a3;
+}
+
+.countries { 
+	clear: both;
+	float: right;
+}
+
+.countries li {
+	float: left;
+	margin-right: 15px;
+	font: 10px Tahoma;
+	text-align: center;
+}
+
+.countries li a {
+	display: block;
+	color: #128aa7;
+	text-decoration: underline;
+}
+
+.countries li:last-child {
+	margin-right: 0px;
+}
+
+/*PHOTO*/
+
+.photo {
+	width: 1000px;
+	height: 215px;
+	background-image: url(../img/photo.jpg);
+	background-size: 100%;
+	border-top: 1px  solid #138aa7;
+	border-bottom: 1px  solid #138aa7;
+}
+
+/*MENU*/
+
+.menu {
+position: relative;
+z-index: 2;
+padding: 0px 50px;
+
+box-shadow: -webkit-box-shadow: 0px 4px 4px -3px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 4px 4px -3px rgba(0,0,0,0.75);
+box-shadow: 0px 4px 4px -3px rgba(0,0,0,0.75);
+
+background: /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#373737+0,303030+99 */
+background: #373737; /* Old browsers */
+background: -moz-linear-gradient(top,  #373737 0%, #303030 99%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#373737), color-stop(99%,#303030)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #373737 0%,#303030 99%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #373737 0%,#303030 99%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #373737 0%,#303030 99%); /* IE10+ */
+background: linear-gradient(to bottom,  #373737 0%,#303030 99%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373737', endColorstr='#303030',GradientType=0 ); /* IE6-9 */
+}
+
+
+.menu:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.menu li {
+	float: left;
+	height: 28px;
+	position: relative;
+	z-index: 1;
+}
+
+.pic {
+	display: inline-block;
+	margin-bottom: 2px;
+	margin-left: 3px;
+}
+
+.menu li ul {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 29;
+	margin: 0;
+	width: 160px;
+	background: #303030;
+	color: #ffffff;
+	font: 14px Tahoma;
+	-webkit-box-shadow: 1px 4px 13px 3px rgba(0,0,0,0.56);
+	-moz-box-shadow: 1px 4px 13px 3px rgba(0,0,0,0.56);
+	box-shadow: 1px 4px 13px 3px rgba(0,0,0,0.56);
+	border-top: 1px solid #000000;
+	opacity: 0;
+	-webkit-transition:0.25s linear opacity;
+}
+
+.menu li ul li {
+	float: none;
+	display: block;
+}
+
+.menu li:hover ul {
+	display: block;
+	opacity: 1;
+}
+
+.menu a {
+	display: block;
+	margin: 0px 37px 0 18px;
+	padding: 5px 0px;
+	color: #ffffff;
+	font: 14px Tahoma;
+}
+
+.menu li:hover ul li:hover {
+	background: #373737;
+}
+
+/*CONTENT*/
+
+.content {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+.content:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.content p {
+	font: 18px Tahoma; 
+	color:  #424c43;
+	text-align: center;
+}
+
+.left-block {
+	padding-top: 10px;
+	width: 21%;
+	float: left;
+	background: #edeef0;
+	padding-bottom: 20000px;
+	margin-bottom: -20000px;
+}
+
+.central-block {
+	padding-top: 10px;
+	width: 57.78%;
+	padding-bottom: 20000px;
+	margin-bottom: -20000px;
+	border-right: 1px solid #c7cacf;
+	border-left: 1px solid #c7cacf;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.right-block {
+	padding-top: 10px;
+	width: 21%;
+	float: right;
+	background: #edeef0;
+	padding-bottom: 20000px;
+	margin-bottom: -20000px;
+}
+
+.content .f14 {
+	font-size: 14px;
+	line-height: 25px;
+	color: #4d574f;
+}
+
+.block-1 {
+	height: 54%;
+	width: 100%;
+}
+
+.block-2 {
+	height: 32%;
+	width: 100%;
+	border-top: 1px solid #c7cacf;
+	border-bottom: 1px solid #c7cacf;
+}
+
+.block-3 {
+	height: 14%;
+	width: 100%;
+}
+
+/*FOOTER*/
+
+.footer {
+	width: 100%;
+	text-align: center;
+	color: #ffffff;
+	font: 12px Tahoma;
+	padding-top: 7px;
+	position: fixed; 
+    bottom: 0; 
+}
