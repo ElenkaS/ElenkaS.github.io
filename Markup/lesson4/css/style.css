@@ -24,9 +24,11 @@ body {
 .header {
 	padding: 0px 30px 0px;
 	background: url(../img/palm.jpg) 167px no-repeat;
-	position: relative;
-	overflow: hidden;
+	/*position: relative;*/
+	/*overflow: hidden;*/
 }
+
+
 
 .logo {
 	padding: 45px 0px 0px 0px;
@@ -66,8 +68,8 @@ body {
 }
 
 .countries li {
-	float: left;
-	margin-right: 15px;
+	display: inline-block;
+	margin-right: 10px;
 	font: 10px Tahoma;
 	text-align: center;
 }
@@ -78,7 +80,7 @@ body {
 	text-decoration: underline;
 }
 
-.countries li:last-child {
+.countries li a:last-child {
 	margin-right: 0px;
 }
 
@@ -91,6 +93,7 @@ body {
 	background-size: 100%;
 	border-top: 1px  solid #138aa7;
 	border-bottom: 1px  solid #138aa7;
+	clear: both;
 }
 
 /*MENU*/
@@ -116,16 +119,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373737', end
 }
 
 
-.menu:after {
+/*.menu:after {
 	content: ".";
 	display: block;
 	height: 0;
 	clear: both;
 	visibility: hidden;
-}
+}*/
 
 .menu li {
-	float: left;
+	display: inline-block;
 	height: 28px;
 	position: relative;
 	z-index: 1;
@@ -167,7 +170,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373737', end
 
 .menu a {
 	display: block;
-	margin: 0px 37px 0 18px;
+	margin: 0px 35px 0 17px;
 	padding: 5px 0px;
 	color: #ffffff;
 	font: 14px Tahoma;
@@ -185,15 +188,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373737', end
 	width: 100%;
 }
 
-.content:after {
+/*.content:after {
 	content: ".";
 	display: block;
 	height: 0;
 	clear: both;
 	visibility: hidden;
-}
+}*/
 
-.content p {
+.content li {
 	font: 18px Tahoma; 
 	color:  #424c43;
 	text-align: center;
@@ -202,40 +205,48 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373737', end
 	color: #4d574f;
 }
 
-.inform-block {
+.block{
 	padding-top: 10px;
-	width: 21%;
-	float: left;
-	background: #edeef0;
 	padding-bottom: 20000px;
 	margin-bottom: -20000px;
 }
 
-.central-block {
-	padding-top: 10px;
-	width: 57.8%;
-	padding-bottom: 20000px;
-	margin-bottom: -20000px;
+ .content .f-w {
+	font-weight: bold;
+	color: #424c43;
+
+}
+
+.inform-block {
+	
+	width: 21%;
+	float: left;
+	background: #edeef0;
+	
 	border-right: 1px solid #c7cacf;
-	border-left: 1px solid #c7cacf;
+}
+
+.central-block {
+	
+	width: 58%;
+	padding-left: 10px;
+	padding-right: 10px;
+	
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .news-block {
-	padding-top: 10px;
+	
 	width: 21%;
 	float: right;
 	background: #edeef0;
-	padding-bottom: 20000px;
-	margin-bottom: -20000px;
+	
+	border-left: 1px solid #c7cacf;
 }
 
 .line {
-	width: 100%;
-	height: 1px;
-	background-color: #c7cacf;
-
+	border-bottom: 1px solid #c7cacf;
 }
 
 /*FOOTER*/
@@ -248,62 +259,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373737', end
 	padding-top: 7px;
 	position: fixed; 
     bottom: 0; 
-}
-
-
-
-/*SPECIAL STYLES FOR INDEX1*/
-
-.fon3 {
-	width: 100%;
-	background: #edeef0;
-	float: left;
-}
-
-.fon2 {
-	width: 100%;
-	background: #ffffff;
-	float: left;
-	position: relative;
-	border-right: 1px solid #c7cacf;
-	right: 20%;
-
-}.fon1 {
-	width: 100%;
-	background: #edeef0;
-	float: left;
-	position: relative;
-	border-right: 1px solid #c7cacf;
-	right: 60%;
 
 }
 
-.inform-block1 {
-	padding-top: 10px;
-	width: 20%;
-	float: left;
-	position: relative;
-	overflow: hidden;
-	left: 80%;
-	
-}
 
-.central-block1 {
-	padding-top: 10px;
-	width: 60%;
-	float: left;
-	position: relative;
-	left: 80%;
-	overflow: hidden;
-}
 
-.news-block1 {
-	padding-top: 10px;
-	width: 20%;
-	float: left; 
-	position: relative;
-	overflow: hidden;
-	left: 80%;
-}
 
 

@@ -1,0 +1,45 @@
+/*SPECIAL STYLES FOR INDEX1*/
+
+.fon {
+	width: 100%;
+	float: left;
+}
+
+.fon3 {
+	background: #edeef0;
+}
+
+.fon2 {
+	background: #ffffff;
+	position: relative;
+	border-right: 1px solid #c7cacf;
+	right: 20%;
+}
+
+.fon1 {
+	background: #edeef0;
+	position: relative;
+	border-right: 1px solid #c7cacf;
+	right: 60%;
+}
+
+
+.block {
+	padding-top: 10px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	left: 80%;
+
+
+}
+
+.width1 {
+	width: 20%;
+}
+
+.width2 {
+	width: 60%;
+}
+
+
