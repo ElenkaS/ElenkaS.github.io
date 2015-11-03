@@ -23,15 +23,12 @@
 	right: 60%;
 }
 
-
 .block {
 	padding-top: 10px;
 	float: left;
 	position: relative;
 	overflow: hidden;
 	left: 80%;
-
-
 }
 
 .width1 {
@@ -41,5 +38,3 @@
 .width2 {
 	width: 60%;
 }
-
-
