@@ -25,10 +25,14 @@
 
 .block {
 	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 	float: left;
 	position: relative;
 	overflow: hidden;
 	left: 80%;
+	box-sizing: border-box;
+
 }
 
 .width1 {

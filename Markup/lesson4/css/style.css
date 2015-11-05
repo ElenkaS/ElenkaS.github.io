@@ -128,21 +128,21 @@ body {
 }
 
 .menu li ul {
-	display: none;
 	position: absolute;
-	left: 0;
-	top: 29;
 	margin: 0;
-	width: 160px;
 	background: #303030;
 	color: #ffffff;
 	font: 14px Tahoma;
-	-webkit-box-shadow: 1px 4px 13px 3px rgba(0,0,0,0.56);
+	border-top: 1px solid #000000;
+	top: 0;
+	left: 0;
+	position: absolute;
+  	visibility: hidden;
+   	opacity: 0;
+  	transition: all 0.5s;
+  	-webkit-box-shadow: 1px 4px 13px 3px rgba(0,0,0,0.56);
 	-moz-box-shadow: 1px 4px 13px 3px rgba(0,0,0,0.56);
 	box-shadow: 1px 4px 13px 3px rgba(0,0,0,0.56);
-	border-top: 1px solid #000000;
-	opacity: 0;
-	-webkit-transition:0.25s linear opacity;
 }
 
 .menu li ul li {
@@ -151,14 +151,16 @@ body {
 }
 
 .menu li:hover ul {
-	display: block;
+	top: 27px;
 	opacity: 1;
+	visibility: visible;
 }
 
 .menu a {
 	display: block;
-	margin: 0px 35px 0 17px;
-	padding: 5px 0px;
+	width: 100%;
+	margin: 0px 0px 0 0px;
+	padding: 5px 27px;
 	color: #ffffff;
 	font: 14px Tahoma;
 }
@@ -204,11 +206,12 @@ body {
 }
 
 .central-block {
-	width: 56%;
+	width: 58%;
 	padding-left: 10px;
 	padding-right: 10px;
 	margin-left: auto;
 	margin-right: auto;
+	box-sizing: border-box;
 }
 
 .news-block {
