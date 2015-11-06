@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CADASTRE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript">
+function showModalWindow () {
+        var modalWindow = document.getElementById('modal-f');
+        modalWindow.style.display = 'block';
+     }
+function closeModalWindow () {
+        var modalWindow = document.getElementById('modal-f');
+        modalWindow.style.display = 'none';
+
+    }
+   </script>
+</head>
+<body>
+
+	<div class="wrapper">
+<!-- -------------------MENU------------------------------ -->
+		<div class="menu clearfix">	
+			<ul>
+				<li ><a href="#">Meu YouBike</a></li>
+				<li><a href="#">Vender</a></li>
+				<li><a href="#">Forum</a></li>
+				<li><a href="#">Contato</a></li>
+				<li class="v-line"><a href="#">Ajuda</a></li>
+				<li class="grad flag"><a href="#">Minhas Ofretas</a></li>
+				<li class="grad"><a href="#" onclick="showModalWindow();" >Ola! <span>Entrar</span> ou <span>Cadastre-se</span></a></li>
+			</ul>
+		</div>
+		<div onclick="closeModalWindow();" class="lay">
+<!-- -------------------MODAL WINDOW ----------------------- -->
+			<div class="modal-f" id="modal-f" onclick="event.stopPropagation()">
+				<h1 class="marg30">Cadastre-se</h1>
+	<!-- -------------------FORM----------------------- -->
+				<div class="reg-block">
+					<a href="#" class="marg30"></a>
+					<p id="line"> OU
+					</p>
+	<!-- -------------------BLOCK of INPUT----------------------- -->
+					<form action="#" method="POST" class="form-reg">
+						<div class="marg15">
+							<input type="text" placeholder="first name">
+						</div>
+						<div class="marg15">
+							<input type="text" name="" id="" placeholder="last name">
+						</div>
+						<div class="marg15">
+							<input type="text" name="" id="" placeholder="email address">
+						</div>
+						<div class="marg15">
+							<input type="password" name="" id=""placeholder="choose password">
+						</div>
+						<div class="marg15">
+							<input type="password" name="" id="" placeholder="password confirm">
+						</div>
+	<!-- -------------------CHECKBOX----------------------- -->
+						<div class="ch-b">
+							<input type="checkbox" name="" id="send">
+							<label for="send">Send My Yourbike updates and tips</label>
+						</div>
+	<!-- -------------------BUTTON----------------------- -->
+						<div class="sub">
+							<button type="submit" class="sub-button">Create my Account</button>
+						</div>
+					</form>
+	<!-- -------------------END OF FORM----------------------- -->
+				</div>
+				<p>By clicking the button above, yuo agree to the Terms of Service Xiew our Privacy Policy</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

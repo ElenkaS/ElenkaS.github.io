@@ -1,0 +1,287 @@
+@import url(reset.css);
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/helvetica/helveticaheavy-webfont.eot');
+    src: url('../fonts/helvetica/helveticaheavy-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helvetica/helveticaheavy-webfont.woff2') format('woff2'),
+         url('../fonts/helvetica/helveticaheavy-webfont.woff') format('woff'),
+         url('../fonts/helvetica/helveticaheavy-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: Helvetica, Tahoma;
+	color: #fff;
+}
+
+.wrapper {
+	width: 1215px;
+	height: 1060px;
+	position: relative;
+	margin: 0 auto;
+	background: url(../img/backgr.jpg) bottom no-repeat;
+}
+
+/*MENU*/
+
+.menu {
+	position: relative;
+	padding-right: 20px;
+	background-color: #074d8b;
+}
+
+.menu ul {
+	float: right;
+	position: relative;
+}
+
+.clearfix:after{
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  width: 100%;
+}
+
+.menu ul a {
+	line-height: 35px;
+	font-size: 14px;
+	color: #60b5ed;
+}
+
+.menu ul li {
+	display: inline-block;
+	padding: 0 12px;
+}
+
+.menu ul li:hover {
+	background-color: #4eabda;
+}
+
+.menu ul li:hover a {
+	color: #fff;
+}
+
+.menu .v-line:after {
+	display: inline-block;
+	width: 1px;
+	height: 30px;
+	margin-left: 17px;
+	content: '';
+	position: absolute;
+	top: 2px;
+	background: url(../img/v_line.jpg) 0 0 no-repeat;
+}
+
+.menu .grad a{
+	color: #fff;
+}
+
+.menu .grad {
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+}
+
+.menu .grad:hover {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+1,50afdc+1,2e7ac4+100 */
+	background: #7db9e8; /* Old browsers */
+	background: -moz-linear-gradient(top,  #7db9e8 1%, #50afdc 1%, #2e7ac4 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#7db9e8), color-stop(1%,#50afdc), color-stop(100%,#2e7ac4)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #7db9e8 1%,#50afdc 1%,#2e7ac4 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #7db9e8 1%,#50afdc 1%,#2e7ac4 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #7db9e8 1%,#50afdc 1%,#2e7ac4 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #7db9e8 1%,#50afdc 1%,#2e7ac4 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#2e7ac4',GradientType=0 ); /* IE6-9 */
+	border-left: 1px solid #56a2dc;
+	border-right: 1px solid #56a2dc;
+}
+
+.menu .grad:hover span {
+	text-decoration: underline;
+}
+
+.menu ul .flag {
+	padding-left: 50px;
+	margin-left: 10px;
+}
+
+.flag:before {
+	display: inline-block;
+	content: '';
+	width: 21px;
+	height: 23px;
+	margin-left: -30px;
+	position: absolute;
+	top: 5px;
+	background: url(../img/flag.png) 0 0 no-repeat;
+}
+
+.lay {
+	position: relative;
+	width: 1215px;
+	height: 1025px;
+}
+
+/*MODAL WINDOW*/
+
+.modal-f {
+	display: none;
+	width: 560px;
+	height: 620px;
+	position: relative;
+	top: 50%; 
+	left: 50%;
+	margin: -320px 0 0 -280px;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.marg30 {
+	margin-bottom: 30px;
+}
+
+.marg15 {
+	margin-bottom: 15px;
+}
+
+h1 {
+	width: 100%;
+	line-height: 60px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 100;
+	border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+/*BLOCK of INPUT*/
+
+.reg-block {
+	width: 276px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+}
+
+
+/*FORM*/
+
+.reg-block a{
+	display: block;
+	width: 276px;
+	height: 35px;
+	background: url(../img/button-fs.png);
+}
+
+#line {
+	width: 100%;
+	margin-bottom: 30px;
+	text-align: center;
+	color: #999;
+	line-height: 16px;
+	font-size: 14px;
+}
+
+#line:before,
+#line:after {
+	content: '';
+	position: relative;
+	display: inline-block;
+	width: 44%;
+	height: 2px;
+	vertical-align: middle;
+	background-color: #000;
+	background-clip: content-box;
+	border-top: 1px solid #666;
+}
+
+.form-reg { 
+	text-align: center;
+	font-size: 14px; 
+}
+
+/*BLOCK of INPUTS*/
+
+.form-reg INPUT[type="text"], INPUT[type="password"] {
+	width: 100%;
+	color: #fff;
+	height: 35px;
+	padding-left: 1em;
+	background-color: #000;
+	border-bottom: 1px solid #4a4a49;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+	color:#fff;
+	text-transform: capitalize;
+}
+
+.form-reg INPUT[type="text"]:hover, INPUT[type="password"]:hover {
+	background-color: #1b5288;
+	border: 1px solid #689bcc;
+	-webkit-box-shadow: 0px 0px 7px 1px rgba(134,191,219,1);
+	-moz-box-shadow: 0px 0px 7px 1px rgba(134,191,219,1);
+	box-shadow: 0px 0px 7px 1px rgba(134,191,219,1);
+
+}
+
+.ch-b {
+	padding: 10px 0;
+	text-align: left;
+}
+
+.form-reg INPUT[type="checkbox"] {
+	vertical-align: middle;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.ch-b label{
+	cursor: pointer;
+}
+
+/*BUTTON*/
+.sub {
+	padding: 15px 0 0 0;
+}
+
+.sub-button {
+	width: 150px;
+	height: 35px;
+	border-radius: 3px;
+	border: none;
+	color: #fff;
+	text-shadow: 0 -0.5px 0 rgba(0, 0, 0, 0.25);
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#67c6e6+0,2e7ac4+100 */
+	background: #67c6e6; /* Old browsers */
+	background: -moz-linear-gradient(top,  #67c6e6 0%, #2e7ac4 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#67c6e6), color-stop(100%,#2e7ac4)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #67c6e6 0%,#2e7ac4 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #67c6e6 0%,#2e7ac4 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #67c6e6 0%,#2e7ac4 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #67c6e6 0%,#2e7ac4 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67c6e6', endColorstr='#2e7ac4',GradientType=0 ); /* IE6-9 */
+	cursor: pointer;
+	-webkit-transition: All 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+	transition: All 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.sub-button:hover {
+	background: #2e7ac4;
+}
+
+/*END OF FORM*/
+
+.modal-f p{
+	width: 60%;
+	margin: 0 auto;
+	line-height: 15px;
+	text-align: center;
+	color: #cccccc;
+	font-size: 11px;
+}
+
