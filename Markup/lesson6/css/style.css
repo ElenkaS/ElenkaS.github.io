@@ -343,7 +343,7 @@ fieldset {
 	margin-top: 15px;
 }	
 
-section {
+aside {
 	width: 190px;
 	float: left;
 }
@@ -358,7 +358,7 @@ section {
 	padding-left: 26px;
 }
 
-.section-title {
+.aside-title {
 	position: relative;
 	border: 1px solid #949fa4;
 	border-radius: 13px;
@@ -370,7 +370,7 @@ section {
 	box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
 }
 
-.section-title:before {
+.aside-title:before {
 	display: inline-block;
 	position: absolute;
 	content: '';
@@ -595,7 +595,7 @@ main {
 	margin-right: 30px;
 }
 
-.description p {
+.description figcaption {
 	text-align: center;
     font-size: 16px;
     font-weight: 600;
@@ -613,7 +613,7 @@ main {
     padding-left: 19px;
 }
 
-.description p span {
+.description figcaption span {
 	font-size: 13px;
 	color: #000;
 	letter-spacing: -0.1px;
