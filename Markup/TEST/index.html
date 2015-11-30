@@ -29,17 +29,20 @@
   </header>
 <!-----SLIDER-------->
   <section class="slider">
-    <!--<div class="slider_arrow">
-      <img src="img/arrow.png">
-    </div>
-    <div class="slider_arrow right">
-      <img src="img/arrow.png">
-    </div>-->
-       <input type="radio" name="slider" id="slide1" checked="">
+      <input type="radio" name="slider" id="slide1" checked="">
       <input type="radio" name="slider" id="slide2">
       <input type="radio" name="slider" id="slide3">
       <input type="radio" name="slider" id="slide4">
-    <div class="slider_wrap clear">
+    <!--arrows-->
+  <div class="slider_control">
+    <div class="slider_control_left">
+      <label for="slide1" class="slider_arrow"></label>
+      <label for="slide2" class="slider_arrow"></label>
+      <label for="slide3" class="slider_arrow"></label>
+      <label for="slide4" class="slider_arrow"></label>
+    </div>
+    <!--slides-->
+    <div class="slider_wrap clearfix">
       <div class="slider_overflow">
         <div class="slider_inner">
           <div class="slider_page">
@@ -92,34 +95,22 @@
           </div> <!--slider_page-->
       </div>  <!--slider_inner-->
     </div> <!--slider_overflow-->
-
-   </div> 
-      <!--arrows-->
-      <div class="slider_control">
+  </div> <!--slider_wrapp-->
+<!--arrows-->
+      <div class="slider_control_right">
         <label for="slide1" class="slider_arrow"></label>
         <label for="slide2" class="slider_arrow"></label>
         <label for="slide3" class="slider_arrow"></label>
         <label for="slide4" class="slider_arrow"></label>
       </div>
-
-  <!--slider_wrap-->
-      <!--buttons-->
-      
-        <div class="slider_switch">
-          <label class="slider_switch_circle" for="slide1"></label>
-          <label  class="slider_switch_circle"for="slide2"></label>
-          <label class="slider_switch_circle" for="slide3"></label>
-          <label  class="slider_switch_circle" for="slide4"></label>
-        </div>
-     
-<!--BUTTONS ROR SLIDER
-      <ul class="slider_switch">
-        <li class="slider_switch_circle"></li>
-        <li class="slider_switch_circle"></li>
-        <li class="slider_switch_circle"></li>
-        <li class="slider_switch_circle"></li>
-      </ul>-->
-    
+    </div> <!--slider_control-->
+ <!--slider_radio-button-->     
+    <div class="slider_switch">
+      <label class="slider_switch_circle" for="slide1"></label>
+      <label  class="slider_switch_circle"for="slide2"></label>
+      <label class="slider_switch_circle" for="slide3"></label>
+      <label  class="slider_switch_circle" for="slide4"></label>
+    </div>
   </section>
 <!-----MAIN CONTENT-------->
   <div class="content">
