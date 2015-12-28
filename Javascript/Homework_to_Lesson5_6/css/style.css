@@ -1,0 +1,16 @@
+﻿.wrapper {
+	margin: 0 auto;
+	width: 900px;
+}
+		
+.display_time {
+	text-align: center;
+	border: solid 1px #000;
+	width: 30%;
+	font-size: 22px;
+}
+
+#button_start, #button_reset {
+	width: 15%;
+	text-transform:  uppercase;
+}
