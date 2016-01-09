@@ -58,25 +58,25 @@ var test = {
 		*/
 		for (var i = 1; i <= params.answersCount; i++) {
 			var div = this.createTag({
-									tagName: 'div', 
-									className: 'offset50 checkbox',
-									target: params.target
-								})
+				tagName: 'div', 
+				className: 'label_custom checkbox',
+				target: params.target
+			})
 			var label = this.createTag({
-									tagName: 'label',
-									//content: '<input type="checkbox"/>'+params.answerText+i,
-									target: div,
-								})
+				tagName: 'label',
+				//content: '<input type="checkbox"/>'+params.answerText+i,
+				target: div,
+			})
 			var checkbox = this.createTag({
-									tagName: 'input',
-									target: label,
-									inputType: 'checkbox'
-								})
+				tagName: 'input',
+				target: label,
+				inputType: 'checkbox'
+			})
 			var label_text = this.createTag({
-									tagName: 'textNode',
-									target: label,
-									content: params.answerText+i
-								})
+				tagName: 'textNode',
+				target: label,
+				content: params.answerText+i
+			})
 			label.insertBefore(checkbox, label_text);
 			
 		};	
@@ -93,41 +93,41 @@ var test = {
 		*/
 		for (var i = 1; i <= params.questionCount; i++) {
 			this.createTag({
-							tagName: 'h3', 
-							className: 'offset50',
-							content: i + '. ' + params.questionText + i,
-							target: params.target
-						})
+				tagName: 'h3', 
+				className: 'label_custom',
+				content: i + '. ' + params.questionText + i,
+				target: params.target
+			})
 			this.createOneAnswersBlock({
-										answersCount: params.answersCount,
-										answerText: params.answerText,
-										target: params.target
-									 })
+				answersCount: params.answersCount,
+				answerText: params.answerText,
+				target: params.target
+			 })
 		}
 	}
 }
 
 //=====================================начало программы=============================
 
-test.body = document.querySelector('body');
+test.body = document.getElementsByTagName('body')[0];
 test.createTag({
-				tagName: 'h2', 
-				className: 'text-center',
-				content: 'Тест по программированию'
-			});
+	tagName: 'h2', 
+	className: 'text-center',
+	content: 'Тест по программированию'
+});
 
 var form = test.createTag({tagName: 'form'});
 test.createAnketa({
-					questionCount: 3, 
-					questionText: 'Вопрос №',
-					answersCount: 3,
-					answerText: 'Вариант ответа №',
-					target: form
-				});
+	questionCount: 3, 
+	questionText: 'Вопрос №',
+	answersCount: 3,
+	answerText: 'Вариант ответа №',
+	target: form
+});
 
 test.createTag({
-				tagName: 'button', 
-				className: 'btn btn-primary center-block',
-				content: 'Проверить мои результаты',
-				target: form
-			})
+	tagName: 'button', 
+	className: 'btn btn-primary center-block',
+	content: 'Проверить мои результаты',
+	target: form
+})
