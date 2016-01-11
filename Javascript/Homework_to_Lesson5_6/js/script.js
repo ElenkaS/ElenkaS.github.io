@@ -1,98 +1,104 @@
 ﻿window.onload = function(){	
-	var hours_block = document.getElementById('hours');
-	var minutes_block = document.getElementById('minutes');
-	var seconds_block = document.getElementById('seconds');
-	var miliseconds_block = document.getElementById('miliseconds');
+	var hoursBlock = document.getElementById('hours');
+	var minutesBlock = document.getElementById('minutes');
+	var secondsBlock = document.getElementById('seconds');
+	var milisecondsBlock = document.getElementById('miliseconds');
 
-	var button_start = document.getElementById('button_start');
-	var button_reset = document.getElementById('button_reset');
+	var buttonStart = document.getElementById('button-start');
+	var buttonReset = document.getElementById('button-reset');
 
-	function init() {
-		hours = 0;
-		minutes = 0;
-		seconds = 0;
-		miliseconds = 0;
-		zero = new Date(0,0);
+	var zero = new Date(0,0);
 
-		miliseconds_block.innerHTML = zeroFill(miliseconds, 3);
-		seconds_block.innerHTML = zeroFill(seconds, 2);
-		minutes_block.innerHTML = zeroFill(minutes, 2);
-		hours_block.innerHTML = zeroFill(hours, 2);
+	var timer = {
+		miliseconds: 0,
+		seconds: 0,
+		minutes: 0,
+		hours: 0,
+		timerId: null,
 
-		button_start.innerHTML = 'start';
-		button_start.style.backgroundColor = '#3c9eff';
-		button_reset.style.backgroundColor = '#f0ad4e';
-		button_reset.style.display = 'none';
-	}
+		init: function () {
+			this.miliseconds = 0;
+			this.seconds = 0;
+			this.minutes = 0;
+			this.hours = 0;
+			milisecondsBlock.innerHTML = timer.setters.zeroFill(timer.miliseconds, 3);
+			secondsBlock.innerHTML = timer.setters.zeroFill(timer.seconds, 2);
+			minutesBlock.innerHTML = timer.setters.zeroFill(timer.minutes, 2);
+			hoursBlock.innerHTML = timer.setters.zeroFill(timer.hours, 2);
 
-	function zeroFill(n, width, z) {
-		  z = z || '0';
-		  n = n + '';
-		  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
-	}
+			buttonStart.innerHTML = 'start';
+			buttonStart.style.backgroundColor = '#3c9eff';
+			buttonReset.style.backgroundColor = '#f0ad4e';
+			buttonReset.style.display = 'none';
 
-	function setMiliseconds() {
-		zero.setMilliseconds( zero.getMilliseconds() + 4);
-		miliseconds = zero.getMilliseconds();
+			buttonStart.addEventListener('click', timer.manage.start);
+			buttonReset.addEventListener('click', timer.manage.reset);
+		},
+		setters: {
+			zeroFill: function (number, width, fillChar) {
+				fillChar = fillChar || '0';
+				number = number + '';
+				return number.length >= width ? number : new Array(width - number.length + 1).join(fillChar) + number;
+			},
+			setMiliseconds: function () {
+				zero.setMilliseconds(zero.getMilliseconds() + 4);
+				timer.miliseconds = zero.getMilliseconds();
 
-		miliseconds++;
-		if(miliseconds >= 996) {
-			miliseconds = 0;
-			setSeconds();
+				timer.miliseconds++;
+				if(timer.miliseconds >= 996) {
+					timer.miliseconds = 0;
+					timer.setters.setSeconds();
+				}
+				milisecondsBlock.innerHTML = timer.setters.zeroFill(timer.miliseconds, 3);
+			},
+			setSeconds: function () {
+				timer.seconds++;
+				if(timer.seconds >= 60) {
+					timer.seconds = 0;
+					timer.setters.setMinutes();
+				}
+				secondsBlock.innerHTML = timer.setters.zeroFill(timer.seconds, 2);
+			},
+			setMinutes: function () {
+				timer.minutes++;
+				if(timer.minutes >= 60) {
+					timer.minutes = 0;
+					timer.setters.setHours();
+				}
+				minutesBlock.innerHTML = timer.setters.zeroFill(timer.minutes, 2);
+			},
+			setHours: function () {
+				timer.hours++;
+				hoursBlock.innerHTML = timer.setters.zeroFill(timer.hours, 2);
+			}
+		},
+		manage: {
+			start: function () {
+				buttonStart.innerHTML = 'Pause';
+				buttonStart.removeEventListener('click', timer.manage.start);
+				buttonStart.addEventListener('click', timer.manage.pause);
+				timer.timerId = setInterval(timer.setters.setMiliseconds, 1);
+
+				buttonStart.style.backgroundColor = '#C9302C';
+				buttonReset.style.display = 'inline';
+			},
+			reset: function () {
+				clearInterval(timer.timerId);
+				timer.init();
+
+				buttonStart.removeEventListener('click', timer.manage.pause);
+				buttonStart.addEventListener('click', timer.manage.start);
+			},
+			pause: function (){
+				buttonStart.innerHTML = 'Continue';
+				buttonStart.removeEventListener('click', timer.manage.pause);
+				buttonStart.addEventListener('click', timer.manage.start);
+				clearInterval(timer.timerId);
+				buttonStart.style.backgroundColor = '#398439';
+			}
 		}
-		miliseconds_block.innerHTML = zeroFill(miliseconds, 3);
 	}
-
-	function setSeconds() {
-		seconds++;
-		if(seconds >= 60) {
-			seconds = 0;
-			setMinutes();
-		}
-		seconds_block.innerHTML = zeroFill(seconds, 2);
-	}
-
-	function setMinutes() {
-		minutes++;
-		if(minutes >= 60) {
-			minutes = 0;
-			setHours();
-		}
-		minutes_block.innerHTML = zeroFill(minutes, 2);
-	}
-
-	function setHours() {
-		hours++;
-		hours_block.innerHTML = zeroFill(hours, 2);;
-	}
-
-	function start() {
-		button_start.innerHTML = 'Pause';
-		button_start.removeEventListener('click', start);
-		button_start.addEventListener('click', pause);
-		timerId = setInterval(setMiliseconds, 1);
-		button_start.style.backgroundColor = '#C9302C';
-		button_reset.style.display = 'inline';
-	}
-
-	function reset() {
-		clearInterval(timerId);
-		init();
-		button_start.removeEventListener('click', pause);
-		button_start.addEventListener('click', start);
-	}
-
-	function pause(){
-		button_start.innerHTML = 'Continue';
-		button_start.removeEventListener('click', pause);
-		button_start.addEventListener('click', start);
-		clearInterval(timerId);
-		button_start.style.backgroundColor = '#398439';
-	}
-
+	
 	//=======================================================
-	button_start.addEventListener('click', start);
-	button_reset.addEventListener('click', reset);
-
-	init();
+	timer.init();
 }
