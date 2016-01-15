@@ -1,0 +1,106 @@
+﻿@import url(reset.css);
+body {
+    background-color: #C54716;
+    font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+    width: 900px;
+    height: 500px;
+    background-color: #f0f8ff;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+#tabs {
+    width: 600px;
+    padding: 10px;
+    margin: 0 auto;
+    border: 1px solid #ccb9a4;
+    border-radius: 5px;
+}
+
+.tab-items {
+    float: left;
+    margin: 0 5px 0 0;
+    font-size: 18px;
+    border: 1px solid #ccb9a4;
+    border-radius: 5px 5px 0 0;
+    background-color: #f0f0f0;
+}
+
+.tab-items-active {
+    border-bottom-color: transparent;
+    background-color: #f0f8ff;
+}
+
+.tab-item-hover {
+    background-color: #CCB9A4;
+}
+
+.tab-links {
+    color: #000;
+    line-height: 2.5;
+    padding: 0 10px;
+}
+
+ul {
+    position: relative;
+    overflow:hidden;
+}
+
+.tabs-content {
+    margin-top: -1px;
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 5px;
+    padding: 20px 0 0 10px;
+}
+
+.tab-text {
+    display: block;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+
+.input-wrapp {
+    margin: 10px;
+    position: relative;
+}
+
+label {
+    display: inline-block;
+    width: 70px;
+}
+
+.tooltip {
+    background-color: #FDFDFD;
+    display:block;
+    padding: 5px;
+    position: absolute;
+    top: -10px;
+    max-width: 170px;
+    font-size: 11px;
+    border: 1px solid #886253;
+    border-radius: 3px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.button-wrapp {
+    margin: 30px 10px 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-button {
+    float: right;
+    margin-right: 15px;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 18px;
+    background-color: #f0f0f0;
+}
