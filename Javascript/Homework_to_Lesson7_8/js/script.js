@@ -11,6 +11,29 @@
 		$(this).addClass('tab-items-active').siblings().removeClass('tab-items-active');
 	}
 
+    function createTooltip() {
+        var width = $(this).width();
+        var position = $(this).position();
+        var title = $(this).attr('title');
+        $(this).removeAttr('title').data('title', title);
+
+        var $toolTip = $('<div></div>')
+            .text(title)
+            .addClass('tooltip');
+
+        if($(this).attr('title-position') == 'top') {
+            $toolTip
+                .css('top', (position.top - 50) + 'px')
+                .css('width', width)
+                .css('left', position.left + 'px');
+        } else {
+            $toolTip.css('left', (width + position.left + 10) + 'px');
+        }
+
+        $(this).parent().append($toolTip);
+        $toolTip.animate({opacity: 1}, 'slow');
+    }
+//===========================================================================================================
     $tabButtons.on('click', switchTab);
 
     $tabButtons.hover(
@@ -30,30 +53,9 @@
 	$tabContents.eq(0).show().siblings().hide();
 
 
-	$('[title]').hover(
-		function() {
-			var width = $(this).width();
-			var position = $(this).position();
-			var title = $(this).attr('title');
-			$(this).removeAttr('title').data('title', title);
+	$('[title]').hover( createTooltip,
 
-			var $toolTip = $('<div></div>')
-				.text(title)
-				.addClass('tooltip');
-
-			if($(this).attr('title-position') == 'top') {
-				$toolTip
-					.css('top', (position.top - 50) + 'px')
-					.css('width', width)
-					.css('left', position.left + 'px');
-			} else {
-				$toolTip.css('left', (width + position.left + 10) + 'px');
-			}
-
-			$(this).parent().append($toolTip);
-			$toolTip.animate({opacity: 1}, 'slow');
-		},
-		function() {
+        function() {
 			$('.tooltip').animate({opacity: 0}, 'fast').remove();
 			$(this).attr('title', $(this).data('title'));
 		}
@@ -73,6 +75,11 @@
             $(this).css('backgroundColor', '#f0f0f0')
         }
     )
+
+    $('#help').on('click', function() {
+                                $('[title]').each(createTooltip);
+                                return false
+                            })
 })
 
 
