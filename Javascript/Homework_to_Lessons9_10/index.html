@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CARUSEL</title>
+
+	<link rel="stylesheet" type="text/css" href="css/jcarousel.responsive.css">
+	<link rel="stylesheet" type="text/css" href="js/cusel/css/cusel.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+	<script type="text/javascript" src="js/jcarousel-0.3.4/dist/jquery.jcarousel.min.js"></script>
+	<script type="text/javascript" src="js/jcarousel-0.3.4/dist/jquery.jcarousel-pagination.min.js"></script>
+	<script type="text/javascript" src="js/cusel/js/cusel.js"></script>
+	<script type="text/javascript" src="js/cusel/js/jScrollPane.js"></script>
+	<script type="text/javascript" src="js/cusel/js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.color.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+</head>
+<body>
+	<div class="wrapper">
+		<nav>
+			<ul class="menu clearfix">
+				<li>
+					<a href="">История вина</a>
+					<ul class="submenu">
+						<li>
+							<a href="">some submenu text</a>
+							<ul class="submenu">
+								<li><a href="">some submenu text</a></li>
+								<li><a href="">some submenu text</a></li>
+								<li>
+									<a href="">some submenu text</a>
+									<ul class="submenu">
+										<li><a href="">some submenu text</a></li>
+										<li><a href="">some submenu text</a></li>
+										<li><a href="">some submenu text</a></li>
+										<li><a href="">some submenu text</a></li>
+									</ul>
+								</li>
+								<li><a href="">some submenu text</a></li>
+							</ul>
+						</li>
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="">Вино</a>
+					<ul class="submenu">
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="">Виноделие</a>
+					<ul class="submenu">
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="">Винный этикет</a>
+					<ul class="submenu">
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+						<li><a href="">some submenu text</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="">Вино в культуре</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="jcarousel-wrapper">
+			<div class="jcarousel">
+				<ul>
+					<li><img src="img/02slider.jpg"></li>
+					<li><img src="img/03slider.jpg"></li>
+					<li><img src="img/04slider.jpg"></li>
+					<li><img src="img/05slider.jpg"></li>
+					<li><img src="img/06slider.jpg"></li>
+					<li><img src="img/07slider.jpg"></li>
+				</ul>
+			</div>
+
+			<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+			<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+			<div class="jcarousel-pagination">
+			</div>
+		</div>
+		<section class="clearfix">
+			<h4>Выберите страну-производителя и тип вина</h4>
+			<div class="local-wrapp">
+				<select id="idSelect" name="nameSelect">
+					<option value="1">Франция</option>
+					<option value="2">Италия</option>
+					<option value="3">Испания</option>
+					<option value="4">Украина</option>
+					<option value="5">Аргентина</option>
+					<option value="6">Молдова</option>
+				</select>
+			</div>
+			<div class="local-wrapp">
+				<label>
+					<span class="niceCheck"><input type="checkbox" name="ch1" /></span>
+					<span>Сухое</span>
+				</label>
+				<label>
+					<span class="niceCheck"><input type="checkbox" name="ch2" /></span>
+					<span>Полусухое</span>
+				</label>
+				<label>
+					<span class="niceCheck"><input type="checkbox" name="ch3" /></span>
+					<span>Полусладкое</span>
+				</label>
+				<label>
+					<span class="niceCheck"><input type="checkbox" name="ch4" /></span>
+					<span>Сладкое</span>
+				</label>
+				<label>
+					<span class="niceCheck"><input type="checkbox" name="ch5" /></span>
+					<span>Десертное</span>
+				</label>
+			</div>
+			<div class="local-wrapp cssCheck">
+				<label>
+					<input type="checkbox" name="1" />
+					<span>Столовое</span>
+				</label>
+				<label>
+					<input type="checkbox" name="2" />
+					<span>Крепленое</span>
+				</label>
+				<label>
+					<input type="checkbox" name="3" />
+					<span>Игристое</span>
+				</label>
+			</div>
+		</section>
+		<div class="line"></div>
+	</div>
+</body>
+</html>

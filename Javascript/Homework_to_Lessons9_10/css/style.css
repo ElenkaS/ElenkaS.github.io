@@ -1,0 +1,181 @@
+﻿@import url(reset.css);
+body {
+    background-color: #fff;
+    font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 1000px;
+}
+
+/*styles for menu*/
+
+.menu {
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+
+.menu li {
+    padding: 5px;
+    position: relative;
+    float: left;
+    padding-right: 45px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.menu a {
+    line-height: 30px;
+    font-size: 19px;
+    color: #A52A2A;
+
+}
+
+.arrow {
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    background: url("../img/arrow.png") 0 0 no-repeat;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+.submenu {
+    width: 195px;
+    display: none;
+    position: absolute;
+    left: 70px;
+    top: 35px;
+    z-index: 10;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #A52A2A;
+    border-top: 5px solid #A52A2A;
+
+}
+
+.submenu li {
+    float: none;
+    position: relative;
+}
+
+.submenu a {
+    font-size: 15px;
+}
+
+.item-hover {
+    background-color: #A52A2A;
+}
+
+.link-hover {
+    color: #fff !important;
+}
+
+.arrow-hover {
+    background: url("../img/arrowhover.png") 0 0 no-repeat;
+}
+
+/*=======================*/
+
+.jcarousel-wrapper {
+    width: 750px;
+    margin: 0 auto;
+}
+
+section {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+h4 {
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #949494;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+.local-wrapp {
+    width: 28%;
+    min-height: 250px;
+    float: left;
+    margin-right: 64px;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: all 1s;
+}
+
+.local-wrapp-animated {
+    -webkit-box-shadow: 2px 2px 13px 0px rgba(94,2,25,1);
+    -moz-box-shadow: 2px 2px 13px 0px rgba(94,2,25,1);
+    box-shadow: 2px 2px 13px 0px rgba(94,2,25,1);
+}
+
+.local-wrapp:last-child {
+    margin-right: 0px;
+}
+
+label {
+    display: block;
+}
+
+.line {
+    margin-top: 20px;
+    height: 1px;
+    background-color: #ccc;
+}
+
+/*styles for CuSel*/
+
+select {
+    width: 100px;
+}
+
+/*styles for checkbox*/
+
+.niceCheck {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+    background: url(../img/sprite.png) no-repeat;
+}
+.niceCheck input {
+    display: none;
+}
+
+.niceCheck  + span {
+    color: #800000;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.cssCheck input:before {
+    content: " ";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: url(../img/sprite.png) no-repeat;
+    position: relative;
+}
+
+.cssCheck input[type=checkbox]:checked:before {
+    background-position: 0 -16px;
+
+}
+
