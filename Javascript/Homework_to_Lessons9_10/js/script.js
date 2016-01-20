@@ -1,58 +1,55 @@
-﻿
-//==========Checkbox==========================
+﻿//==========Checkbox==========================
 
 function changeCheck(el) {
-
     var el = el,
-
         input = el.find("input").eq(0);
 
-    if(!input.attr("checked")) {
-        el.css("background-position","0 -16px");
+    if (!input.attr("checked")) {
+        el.css("background-position", "0 -16px");
         input.attr("checked", true);
     } else {
-        el.css("background-position","0 0");
+        el.css("background-position", "0 0");
         input.attr("checked", false)
     }
     return true;
 }
 
-function changeCheckStart(el)
-{
+function changeCheckStart(el) {
     var el = el,
         input = el.find("input").eq(0);
-    if(input.attr("checked")) {
-        el.css("background-position","0 -16px");
+    if (input.attr("checked")) {
+        el.css("background-position", "0 -16px");
     }
     return true;
 
 }
 
-$(function(){
+$(function () {
 
 //===========Menu==================
 
     $('.menu li').hover(
-        function() {
+        function () {
 
-            $(this).children('.submenu').stop(true, true).fadeIn(500);
-
-            $(this).animate({
-                backgroundColor: '#A52A2A'
-            },300);
+            $(this).css('cursor', 'pointer');
+            $(this).stop(true, true)
+                .children('.submenu').stop(true, true).fadeIn(500).end()
+                .animate({
+                    backgroundColor: '#A52A2A'
+                }, 300);
 
             $(this).children('a').addClass('link-hover');
 
             $(this).children('.arrow').addClass('arrow-hover')
         },
 
-        function() {
+        function () {
 
-            $(this).children('.submenu').stop(true, true).fadeOut(50);
-
-            $(this).animate({
-                backgroundColor: '#FFF'
-            },50);
+            $(this).stop(true, true)
+                .children('.submenu').stop(true, true).fadeOut(50).end()
+                .animate({
+                    backgroundColor: '#FFF'
+                }, 50);
 
             $(this).children('a').removeClass('link-hover');
 
@@ -60,32 +57,30 @@ $(function(){
         }
     );
 
-    $('.menu li').each( function() {
-
+    $('.menu li').each(function () {
         if ($(this).find('ul').length) {
             $(this).children('a').after($('<div></div>').addClass('arrow'));
         }
-
     });
 
 //===========Carousel==================
 
     $('.jcarousel').jcarousel({
-        wrap:'circular'
+        wrap: 'circular'
     });
-    $('.jcarousel-control-prev').click(function() {
+    $('.jcarousel-control-prev').click(function () {
         $('.jcarousel').jcarousel('scroll', '-=1');
     });
 
-    $('.jcarousel-control-next').click(function() {
+    $('.jcarousel-control-next').click(function () {
         $('.jcarousel').jcarousel('scroll', '+=1');
     });
 
     $('.jcarousel-pagination')
-        .on('jcarouselpagination:active', 'a', function() {
+        .on('jcarouselpagination:active', 'a', function () {
             $(this).addClass('active');
         })
-        .on('jcarouselpagination:inactive', 'a', function() {
+        .on('jcarouselpagination:inactive', 'a', function () {
             $(this).removeClass('active');
         })
         .jcarouselPagination();
@@ -96,33 +91,28 @@ $(function(){
         changedEl: "#idSelect",
         visRows: 5,
         scrollArrows: true
-}
+    }
     cuSel(params);
 
     //==========Checkbox==========================
 
-    $('.niceCheck').parent('label').on('click', function() {
-
+    $('.niceCheck').parent('label').on('click', function () {
         changeCheck($(this).children('.niceCheck'))
     });
 
-
-    $(".niceCheck").each(function() {
-
+    $(".niceCheck").each(function () {
         changeCheckStart($(this))
     });
 
 //========Animation for '.local-wrapp' ==================
 
     $('.local-wrapp').hover(
-
-        function() {
+        function () {
             $(this).addClass('local-wrapp-animated')
         },
 
-        function() {
+        function () {
             $(this).removeClass('local-wrapp-animated')
         }
-
     )
 });
