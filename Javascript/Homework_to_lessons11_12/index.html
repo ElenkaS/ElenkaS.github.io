@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CARUSEL-PLUGIN</title>
+
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery.carusel.js"></script>
+	<script src="js/tmpl.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+</head>
+<body>
+	<nav>
+
+	</nav>
+	<div class="carusel-wrapp">
+		<div class="carusel">
+			<div class="carousel-arrow-left">
+			</div>
+			<div class="carusel-hider">
+				<ul class="carusel-list">
+					<li class="carusel-element"><img src="img/1s.jpg"><p>Описание 1</p></li>
+					<li class="carusel-element"><img src="img/2s.jpg"><p>Описание 2</p></li>
+					<li class="carusel-element"><img src="img/3s.jpg"><p>Описание 3</p></li>
+					<li class="carusel-element"><img src="img/4s.jpg"><p>Описание 4</p></li>
+					<li class="carusel-element"><img src="img/5s.jpg"><p>Описание 5</p></li>
+					<li class="carusel-element"><img src="img/6s.jpg"><p>Описание 6</p></li>
+					<li class="carusel-element"><img src="img/7s.jpg"><p>Описание 7</p></li>
+					<li class="carusel-element"><img src="img/8s.jpg"><p>Описание 8</p></li>
+				</ul>
+			</div>
+			<div class="carousel-arrow-right">
+			</div>
+		</div>
+	</div>
+		<div class="wrapper">
+			<main>
+				<div class="content">
+					<h2 id="cake">Торты под заказ</h2>
+					<h2 id="cupcake">Кексы под заказ</h2>
+						<ul class="product">
+							<script type="text/template" id="product-list">
+								<% for (var i = 0; i < data.length; i++) { %>
+									<li class="product-item cake">
+										<a  href="<%= data[i].href%>" class="product-link"><img src="<%= data[i].imgLink %>"></a>
+										<p class="product-name"><%= data[i].name %></p>
+										<p class="product-price"><%= data[i].price %> грн.</p>
+									</li>
+								<% }; %>
+							</script>
+							<script type="text/template" id="product-list-cupcake">
+								<% for (var i = 0; i < data.length; i++) { %>
+								<li class="product-item cupcake">
+									<a  href="<%= data[i].href%>" class="product-link"><img src="<%= data[i].imgLink %>"></a>
+									<p class="product-name"><%= data[i].name %></p>
+									<p class="product-price"><%= data[i].price %> грн.</p>
+								</li>
+								<% }; %>
+							</script>
+
+
+						</ul>
+				</div>
+			</main>
+		</div>
+</body>
+</html>
