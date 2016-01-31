@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/tmpl.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<h2 class="text-center page-header">Тест по программированию</h2>
+		<form class="" role="form">
+			<script type="text/template" id="test">
+				<% for (var i = 0; i < data.length; i++) { %>
+					<div class="questions form-group bg-info">
+						<%= i+1 +'. '+ data[i].text %>
+					</div>
+						<% for (var j = 0; j < data[i].answers.length; j++) { %>
+							<div class="checkbox">
+								<label class="center-block"><input type="checkbox" name="<%= (i+1) + '-' + (j+1) %>" id=""><%= data[i].answers[j].answ_text %></label>
+							</div>
+						<% }; %>
+				<% }; %>
+			</script>
+			<button class="btn btn-primary center-block" disabled="disabled" id="result">Check</button>
+		</form>
+		<div class="modal-window">
+			<ul>
+				<li class="header">
+
+				</li>
+				<li class="body">
+
+				</li>
+				<li>
+					<button type="button" class="btn btn-default" id="close">OK!</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
