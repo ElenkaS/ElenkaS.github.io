@@ -1,0 +1,59 @@
+﻿@import url(reset.css);
+body {
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    min-height: 500px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.search-google input{
+    width: 80%;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid #aaa;
+}
+
+.search-google button {
+    height: 40px;
+    padding: 3px;
+}
+
+.list {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.item {
+    padding-bottom: 20px;
+}
+
+.link {
+    font-size: 16px;
+    color: #000188;
+}
+
+.visibleUrl {
+    color: #2b542c;
+    margin-top: 3px;
+}
+
+.page-block {
+    color: #000188;
+}
+
+.page-block span {
+    margin-right: 20px;
+
+}
+
+.active {
+    color: #b92c28;
+    text-decoration: underline;
+}
