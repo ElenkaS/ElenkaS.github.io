@@ -2,3 +2,5 @@ sh.exe.stackdump
 *.stackdump
 **/.idea/*
 Javascript/Homework_to_Lesson5_6/.idea/.name
+node_modules/
+.sass-cache/
