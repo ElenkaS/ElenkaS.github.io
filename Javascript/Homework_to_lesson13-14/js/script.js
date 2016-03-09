@@ -102,9 +102,9 @@ $(function () {
         },
 
         fillCorrectAnswers: function() {
-            for (var i = 0; i < questions.length; i++) {
-                for (var j = 0; j < questions[i].answers.length; j++) {
-                    if (questions[i].answers[j].correct == true) {
+            for (var i = 0; i < receivedTest.length; i++) {
+                for (var j = 0; j < receivedTest[i].answers.length; j++) {
+                    if (receivedTest[i].answers[j].correct == true) {
                         this.correctAnswers.push(''+(i+1)+'-'+(j+1));
                     }
                 }
@@ -122,7 +122,7 @@ $(function () {
             if (processTest.userAnswers.toString() == processTest.correctAnswers.toString()) {
                 processTest.showModal('Поздравляю!', 'Тест успешно пройден');
             } else {
-                processTest.showModal('Oops!', 'Тест пройден с ошибками ((((');
+                processTest.showModal('Ой!', 'Тест пройден с ошибками ((((');
             }
             processTest.userAnswers = [];
             return false;
