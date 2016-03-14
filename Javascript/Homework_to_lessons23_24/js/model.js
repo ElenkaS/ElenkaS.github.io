@@ -8,8 +8,6 @@ define(
         function Model(data) {
             var self = this;
 
-            self.data = data;
-
             self.addItem = function (item) {
 
                 if (item.length === 0) {
@@ -17,6 +15,7 @@ define(
                 }
                 self.data.push(item);
 
+                self.setToStorage();
                 return self.data;
             }
 
@@ -28,19 +27,28 @@ define(
                     return;
                 }
                 self.data.splice(index, 1);
-
+                self.setToStorage();
                 return self.data;
             }
 
             self.editItem = function (index, newItemValue) {
-
-                console.log(index, newItemValue);
                 self.data[index] = newItemValue;
+                self.setToStorage();
             }
 
             self.countTasks = function () {
                 return self.data.length;
             }
+
+            self.setToStorage = function () {
+                 localStorage.setItem('tasks', JSON.stringify(self.data));
+            }
+
+            self.getFromStorage = function() {
+                return JSON.parse(localStorage.getItem('tasks'));
+            }
+
+            self.data = data || self.getFromStorage();
 
         }
         return Model;

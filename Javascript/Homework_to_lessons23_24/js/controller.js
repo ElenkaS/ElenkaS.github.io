@@ -10,7 +10,6 @@ define(
 
         function Controller(model, view) {
 
-            console.log('1111111111');
             var self = this;
 
             view.elements.addBtn.on('click', addEditItem);
