@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>TEST</title>
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css" >
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="js/tmpl.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
@@ -20,7 +20,8 @@
 					</div>
 						<% for (var j = 0; j < data[i].answers.length; j++) { %>
 							<div class="checkbox">
-								<label class="center-block"><input type="checkbox" name="<%= (i+1) + '-' + (j+1) %>" id=""><%= data[i].answers[j].answ_text %></label>
+								<!-- <label class="center-block"><input type="checkbox" name="<%= (i+1) + '-' + (j+1) %>" id=""><%= data[i].answers[j].answ_text %></label> -->
+								<label class="center-block"><input type="checkbox" data-name="<%= i %>" name="<%= j %>" id=""><%= data[i].answers[j].answ_text %></label>
 							</div>
 						<% }; %>
 				<% }; %>

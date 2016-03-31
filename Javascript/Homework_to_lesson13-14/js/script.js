@@ -103,35 +103,53 @@ $(function () {
 
         fillCorrectAnswers: function() {
             for (var i = 0; i < receivedTest.length; i++) {
+                this.correctAnswers[i] = [];
                 for (var j = 0; j < receivedTest[i].answers.length; j++) {
                     if (receivedTest[i].answers[j].correct == true) {
-                        this.correctAnswers.push(''+(i+1)+'-'+(j+1));
+                        this.correctAnswers[i].push(j);
                     }
                 }
             }
+            console.log(processTest.correctAnswers);
         },
+
         checkResult: function() {
 
             $('form input:checked').each( function() {
-                processTest.userAnswers.push($(this).attr('name'));
-            })
+                processTest.userAnswers[$(this).attr('data-name')] = [];
+            });
 
-            processTest.userAnswers.sort();
-            processTest.correctAnswers.sort();
+            $('form input:checked').each( function() {
+                processTest.userAnswers[$(this).attr('data-name')].push(+($(this).attr('name')));
+            })
 
             if (processTest.userAnswers.toString() == processTest.correctAnswers.toString()) {
                 processTest.showModal('Поздравляю!', 'Тест успешно пройден');
-            } else {
-                processTest.showModal('Ой!', 'Тест пройден с ошибками ((((');
+                return false;
             }
-            processTest.userAnswers = [];
-            return false;
-        },
 
+            var errorMessage = '';
+
+            for (var i = 0; i < processTest.correctAnswers.length; i++) {
+
+                if (processTest.userAnswers[i] == undefined) {
+                    errorMessage += '<p>Вопрос № '+(i+1) +' без ответа;</p>'
+                } else {
+                    if (processTest.userAnswers[i].toString() !== processTest.correctAnswers[i].toString()) {
+                        errorMessage += '<p>Ответ на вопрос № '+(i+1) +' не правильный;</p>'
+                    }
+                }
+
+             }
+            if (errorMessage != '')
+             processTest.showModal('Есть ошибки', errorMessage);
+             processTest.userAnswers = [[]];
+             return false;
+        },
         showModal: function(header, text, modal) {
             modal = modal || '.modal-window';
-            $(modal + ' .header').text(header);
-            $(modal + ' .body').text(text);
+            $(modal + ' .header').html(header);
+            $(modal + ' .body').html(text);
             $(modal).fadeIn();
         },
 
