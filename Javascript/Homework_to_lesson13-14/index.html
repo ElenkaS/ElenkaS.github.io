@@ -20,7 +20,6 @@
 					</div>
 						<% for (var j = 0; j < data[i].answers.length; j++) { %>
 							<div class="checkbox">
-								<!-- <label class="center-block"><input type="checkbox" name="<%= (i+1) + '-' + (j+1) %>" id=""><%= data[i].answers[j].answ_text %></label> -->
 								<label class="center-block"><input type="checkbox" data-name="<%= i %>" name="<%= j %>" id=""><%= data[i].answers[j].answ_text %></label>
 							</div>
 						<% }; %>

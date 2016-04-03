@@ -81,7 +81,7 @@ $(function () {
     ];
 
 //-------------sent data test to localStorage-------------
-    var localTest = localStorage.setItem( 'test', JSON.stringify( questions ));
+    var localTest = localStorage.setItem('test', JSON.stringify(questions));
     var receivedTest = JSON.parse(localStorage.getItem('test'));
 //-------------------------------------------------------------
     var questionslist = tmpl(html, {
@@ -96,12 +96,12 @@ $(function () {
         correctAnswers: [],
         userAnswers: [],
 
-        init: function() {
+        init: function () {
             this.fillCorrectAnswers();
             this.setupEventListener()
         },
 
-        fillCorrectAnswers: function() {
+        fillCorrectAnswers: function () {
             for (var i = 0; i < receivedTest.length; i++) {
                 this.correctAnswers[i] = [];
                 for (var j = 0; j < receivedTest[i].answers.length; j++) {
@@ -113,13 +113,13 @@ $(function () {
             console.log(processTest.correctAnswers);
         },
 
-        checkResult: function() {
+        checkResult: function () {
 
-            $('form input:checked').each( function() {
+            $('form input:checked').each(function () {
                 processTest.userAnswers[$(this).attr('data-name')] = [];
             });
 
-            $('form input:checked').each( function() {
+            $('form input:checked').each(function () {
                 processTest.userAnswers[$(this).attr('data-name')].push(+($(this).attr('name')));
             })
 
@@ -133,39 +133,43 @@ $(function () {
             for (var i = 0; i < processTest.correctAnswers.length; i++) {
 
                 if (processTest.userAnswers[i] == undefined) {
-                    errorMessage += '<p>Вопрос № '+(i+1) +' без ответа;</p>'
+                    errorMessage += '<p class="error">Вопрос № ' + (i + 1) + ' без ответа;</p>'
                 } else {
                     if (processTest.userAnswers[i].toString() !== processTest.correctAnswers[i].toString()) {
-                        errorMessage += '<p>Ответ на вопрос № '+(i+1) +' не правильный;</p>'
+                        errorMessage += '<p class="error">Ответ на вопрос № ' + (i + 1) + ' не правильный;</p>'
+                    } else {
+                        errorMessage += '<p class="success">На вопрос № ' + (i + 1) + ' вы ответили правильно;</p>'
                     }
                 }
-
-             }
+            }
             if (errorMessage != '')
-             processTest.showModal('Есть ошибки', errorMessage);
-             processTest.userAnswers = [[]];
-             return false;
-        },
-        showModal: function(header, text, modal) {
+                processTest.showModal('Есть ошибки', errorMessage);
+
+            processTest.userAnswers = [];
+            return false;
+        }
+        ,
+        showModal: function (header, text, modal) {
             modal = modal || '.modal-window';
             $(modal + ' .header').html(header);
             $(modal + ' .body').html(text);
             $(modal).fadeIn();
         },
 
-        closeModal:function() {
+        closeModal: function () {
             $('.modal-window').hide()
         },
 
-        disableButton: function() {
+        disableButton: function () {
             var checkedCount = $('form input:checked').length;
             if (checkedCount)
                 $('#result').removeAttr('disabled');
             else
                 $('#result').attr('disabled', 'disabled');
-        },
+        }
+        ,
 
-        setupEventListener: function() {
+        setupEventListener: function () {
             $('#result').on('click', this.checkResult);
 
             $('#close').on('click', this.closeModal);
@@ -175,4 +179,4 @@ $(function () {
     }
 
     processTest.init();
-    })
+})

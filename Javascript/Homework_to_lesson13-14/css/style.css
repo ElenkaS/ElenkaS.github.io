@@ -66,3 +66,11 @@ h2 {
     font-weight: bold;
     min-height: 40px;
 }
+
+.error {
+    color: #FF0000;
+}
+
+.success {
+    color: #006400;
+}
