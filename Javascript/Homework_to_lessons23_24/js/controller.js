@@ -47,8 +47,8 @@ define(
                 var item = $(this).data('value');
                 view.elements.input.val(item);
                 view.elements.addBtn.text('Edit').addClass('button-edit');
-                var index = $(this).parent().index();
-                view.elements.addBtn.data('edit-index', index);
+                var index = $(this).parent('li').index();
+                view.elements.addBtn.data('edit-index', (index - 1));
 
             }
 

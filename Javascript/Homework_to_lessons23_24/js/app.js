@@ -27,7 +27,7 @@ require(
 
       $(function() {
           var firstToDoList = ['learn js', 'learn html', 'make coffe'];
-          var modelInst = new Model(firstToDoList);
+          var modelInst = new Model();
           var viewInst = new View(modelInst);
           var controllerInst = new Controller(modelInst, viewInst);
       })
