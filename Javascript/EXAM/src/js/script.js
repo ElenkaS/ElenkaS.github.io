@@ -1,5 +1,6 @@
 
 $(function() {
+    $.support.cors = true;
 //===========Carousel==================
     $('.jcarousel').jcarousel({
         wrap: 'circular'
@@ -42,23 +43,20 @@ $(function() {
             dataType: "json",
             cache: false,
             url: 'http://api.pixplorer.co.uk/image?word=' + queryPic + '&amount=7&size=m',
+            crossDomain: true,
 
             success: function(data) {
                 for (i = 0; i <= (data.images.length - 1); i++) {
                    url1 = data.images[i].imageurl;
                     $('.grid-item').eq(i).css("background-image", "url('"+decodeURI(url1)+"')");
-                    $('.ideas_text').eq(i).text(data.images[i].word);
+                    $('.ideas__text').eq(i).text(data.images[i].word);
                 }
 
-                $('.grid').masonry({
-                    itemSelector: '.grid-item', // указываем элемент-контейнер в котором расположены блоки для динамической верстки
-                    columnWidth: '.gutter-sizer', // указываем класс элемента являющегося блоком в нашей сетке
-                    isResizable: true, // перестраивает блоки при изменении размеров окна
-                    singleMode: false, // true - если у вас все блоки одинаковой ширины
-                    isAnimated: true, // анимируем перестроение блоков
-                    animationOptions: { // опции анимации - очередь и продолжительность анимации
-                        queue: false,
-                        duration: 700
+                $('.grid').isotope({
+                    itemSelector: '.grid-item',
+                    layoutMode: 'fitRows',
+                    masonry: {
+                        gutter: 20
                     }
                 });
             }
@@ -75,4 +73,148 @@ $(function() {
     });
 
     renderList('');
+
+    $('.ideas__text').on('click', function() {
+
+        var bg = $(this).parent('.ideas__image').css('background-image');
+        var $modalWindow = $('<div class="modal-window"/>');
+        $modalWindow.css('background-image', bg);
+        $modalWindow.css('background-image', bg).css('display', 'none');
+        var $overlay = $('<div class="overlay"/>');
+        $('body').prepend($overlay);
+        $('.overlay').prepend($modalWindow);
+        $modalWindow.fadeIn(1000);
+    });
+
+    $('body').on('click', '.overlay', function() {
+        $('.overlay').hide();
+        $('modal-window').fadeOut(200);
+        $('.overlay').remove();
+        $('modal-window').remove();
+
+
+
+        $('header').css( "background-size", "cover" );
+
+    });
+
+    /////////////////////////////////
+
+    ////////////////////////////
+  /*  function loadXMLDoc(query, cb) {
+
+
+        var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+
+        //var xhr = new XHR();
+
+        var url = 'http://api.pixplorer.co.uk/image?word=' + query + '&amount=7&size=m';
+
+       // var xmlhttp = new XMLHttpRequest();
+
+         var xmlhttp = new XHR();
+
+        /*
+         try {
+         xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+         } catch (e) {
+         try {
+         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+         } catch (E) {
+         xmlhttp = false;
+         }
+         }
+         */
+      /*  if (xmlhttp === false) {
+            console.log('not set xmlhttp')
+            return;
+        }
+
+        /*xmlhttp.onreadystatechange = function () {
+
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var data = JSON.parse(xmlhttp.responseText);
+                console.log(data)
+                for (i = 0; i <= (data.images.length - 1); i++) {
+                    url1 = data.images[i].imageurl;
+                    $('.grid-item').eq(i).css("background-image", "url('" + decodeURI(url1) + "')");
+                    $('.ideas_text').eq(i).text(data.images[i].word);
+                }
+                console.log('start')
+                $('.grid').isotope({
+                    itemSelector: '.grid-item',
+                    layoutMode: 'fitRows',
+                    masonry: {
+                        gutter: 20
+                    }
+                });
+                console.log('end')
+            }
+        }*/
+
+
+
+       /* xmlhttp.onload = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var data = JSON.parse(xmlhttp.responseText);
+                console.log(data)
+                for (i = 0; i <= (data.images.length - 1); i++) {
+                    url1 = data.images[i].imageurl;
+                    $('.grid-item').eq(i).css("background-image", "url('" + decodeURI(url1) + "')");
+                    $('.ideas_text').eq(i).text(data.images[i].word);
+                }
+                console.log('start')
+                $('.grid').isotope({
+                    itemSelector: '.grid-item',
+                    layoutMode: 'fitRows',
+                    masonry: {
+                        gutter: 20
+                    }
+                });
+                console.log('end')
+            }
+        }
+
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+    }
+
+
+  /*  function loadXMLDoc() {
+        try {
+            loadXMLDoc()
+        } catch (e) {
+            alert("В этом браузере данная фича не поддерживается.")
+        }
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    $('#search').click(function (event) {
+        event.preventDefault();
+        var query = $('#input_search').val();
+
+       // $('.grid').remove();
+
+        loadXMLDoc(query);
+
+    });*/
+
+   // var query = '';
+    //loadXMLDoc(query);
+
 })

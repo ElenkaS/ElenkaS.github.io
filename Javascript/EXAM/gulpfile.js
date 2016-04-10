@@ -8,19 +8,30 @@ var lr = require('tiny-lr');
 var server = lr();
 var sass = require('gulp-sass');
 var imagemin = require('gulp-imagemin');
+var copy = require('gulp-copy');
+var uglify = require('gulp-uglify');
 
-gulp.task('scripts', function() {
-    gulp.src(['src/js/**/*.js'])
-       // .pipe(browserify())
-       // .pipe(concat('script.js'))
-        .pipe(gulp.dest('build/js'))
-        .pipe(refresh(server))
+gulp.task('copy', function () {  //copy
+    return gulp.src(['src/font/**'])
+        .pipe(gulp.dest('build/font'));
 });
 
-gulp.task('styles', function() {
-    gulp.src(['src/css/styles.css'])
-        .pipe(styl({compress : false}))
-        .pipe(gulp.dest('build/css'))
+gulp.task('scripts', function() { //concat and min js
+    return gulp.src(['src/js/jquery-1.7.min.js', 'src/js/jcarousel-0.3.4/dist/jquery.jcarousel.min.js', 'src/js/html5shiv.js', 'src/js/isotope.pkgd.js', 'src/js/script.js'])
+        .pipe(concat('script.main.js'))
+        .pipe(gulp.dest('build/js/'));
+});
+
+gulp.task('css', function() {  // concat css
+    return gulp.src(['src/css/reset.css', 'src/css/jcarousel.responsive.css', 'src/css/styles.css'])
+        .pipe(concat('styles.main.css'))
+        .pipe(gulp.dest('src/css'));
+});
+
+gulp.task('styles', function() { //min css
+    gulp.src(['src/css/ie8.css'])
+        .pipe(styl({compress : true}))
+        .pipe(gulp.dest('build/css/'))
         .pipe(refresh(server))
 });
 
@@ -33,7 +44,13 @@ gulp.task('lr-server', function() {
 // Using gulp-sass
 
 gulp.task('sass', function(){
-    return gulp.src('src/css/**/*.scss')
+    return gulp.src('src/css/**/styles.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('src/css'))
+});
+
+gulp.task('sassie', function(){
+    return gulp.src('src/css/**/ie8.scss')
         .pipe(sass())
         .pipe(gulp.dest('src/css'))
 });

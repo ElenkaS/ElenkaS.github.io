@@ -1,0 +1,210 @@
+.modal-window {
+  width: 600px;
+  margin-left: -300px;
+  height: 450px;
+  margin-top: -225px; }
+
+header {
+  width: 100%;
+  height: 700px;
+  background: url("../img/bg_header.jpeg") center no-repeat;
+  background-size: cover;
+  -ms-behavior: url("backgroundsize.min.htc");
+  padding-top: 50px; }
+
+.wrapper {
+  min-width: 940px;
+  color: #319d13;
+  text-align: center; }
+
+.login__wrapp {
+  width: 940px;
+  margin: 0 auto; }
+
+.login {
+  width: auto;
+  float: right; }
+
+.login__link:hover {
+  border: 2px solid #fff; }
+
+.login__link_border:hover {
+  border: none; }
+
+.logo {
+  float: left;
+  width: auto;
+  margin: 0; }
+
+.header {
+  margin-top: 120px; }
+
+.header__main-text {
+  font-size: 52px;
+  line-height: 62px; }
+
+.header__text {
+  width: auto;
+  margin-top: 40px;
+  font-size: 24px; }
+
+.button-search {
+  margin-top: 35px; }
+  .button-search:hover {
+    color: #ff4e50;
+    background-color: #fff; }
+
+.slider__wrapper {
+  width: 940px; }
+
+.slider__header {
+  margin-top: 95px; }
+
+.slider {
+  width: 300px;
+  float: left;
+  height: 400px;
+  margin-right: 10px; }
+  .slider:last-child {
+    margin-right: 0; }
+
+.jcarousel img, .jcarousel1 img {
+  display: block;
+  max-width: 100%;
+  /*height: auto !important;*/
+  height: 400px; }
+
+.jcarousel li, .jcarousel1 li {
+  width: 300px; }
+
+.slider__title {
+  color: #fff;
+  margin: 0 auto 15px;
+  font-size: 22px;
+  text-align: left; }
+
+.slider__list {
+  width: 100%;
+  height: 400px; }
+
+.slider__item {
+  height: 400px;
+  margin-bottom: 10px;
+  width: 305px; }
+  .slider__item img {
+    width: 242px;
+    height: 400px; }
+
+.slider__content {
+  width: 80%;
+  left: 15px;
+  font-weight: 600; }
+
+.slider__text {
+  font-family: Arial;
+  font-size: 13px;
+  font-weight: 100; }
+
+.slider__arrow {
+  width: 90%;
+  top: 35%;
+  left: 15px;
+  right: 15px; }
+  .slider__arrow .lnr-chevron-left {
+    width: 20px;
+    height: 50px;
+    background: url("../img/arrow-left.png") 0 0 no-repeat;
+    background-size: cover; }
+  .slider__arrow .lnr-chevron-right {
+    width: 20px;
+    height: 505px;
+    background: url("../img/arrow-right.png") 0 0 no-repeat;
+    background-size: cover; }
+
+.partners__wrapper {
+  margin-top: 100px; }
+
+.partners__person {
+  min-height: 251px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 24%;
+  min-height: 251px;
+  display: inline-block;
+  vertical-align: middle; }
+
+.button-search_partners:hover {
+  background-color: #FF4E50;
+  color: #fff; }
+
+.ideas {
+  margin-top: 100px; }
+
+.ideas__image-wrapper {
+  margin-bottom: 100px; }
+
+.ideas__image {
+  height: 310px; }
+
+.ideas__text {
+  line-height: 310px; }
+
+.ideas__form input {
+  margin: 0; }
+
+.ideas__question {
+  margin-bottom: 40px; }
+
+.button-search_ideas {
+  margin: 10px  auto 0;
+  display: block; }
+
+.button-search_ideas:hover {
+  color: #ff4e50;
+  background-color: #fff;
+  border: 1px solid #ff4e50; }
+
+.footer {
+  margin-top: 80px;
+  padding: 40px 0 40px 0; }
+
+.footer__wrap {
+  width: 940px; }
+
+.logo__link_footer {
+  float: left;
+  margin-right: 20%; }
+
+.footer__menu-wrapp {
+  float: left;
+  margin-right: 20%; }
+
+.footer__title-menu {
+  margin-top: 0;
+  text-align: left; }
+
+.footer__menu {
+  text-align: left;
+  display: block; }
+
+.footer__item {
+  line-height: 24px;
+  float: none; }
+
+.footer__title-menu_partners {
+  float: left;
+  margin-right: 20%; }
+
+.footer__logo {
+  margin: 0;
+  float: left; }
+
+/*for MANSORY*/
+.grid-item {
+  width: 32.5%; }
+
+.w2 {
+  width: 65%; }
+
+.gutter-sizer {
+  width: 32.5%; }
