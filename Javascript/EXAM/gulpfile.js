@@ -16,6 +16,12 @@ gulp.task('copy', function () {  //copy
         .pipe(gulp.dest('build/font'));
 });
 
+gulp.task('compressjs', function() {
+    return gulp.src('build/js/script.main.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('build/js'));
+});
+
 gulp.task('scripts', function() { //concat and min js
     return gulp.src(['src/js/jquery-1.7.min.js', 'src/js/jcarousel-0.3.4/dist/jquery.jcarousel.min.js', 'src/js/html5shiv.js', 'src/js/isotope.pkgd.js', 'src/js/script.js'])
         .pipe(concat('script.main.js'))

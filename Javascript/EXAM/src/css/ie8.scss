@@ -3,6 +3,8 @@
   margin-left: -300px;
   height: 450px;
   margin-top: -225px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
@@ -255,6 +257,8 @@ header {
 /*for MANSORY*/
 .grid-item {
   width: 32.5%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .w2 {
   width: 65%;

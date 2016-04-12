@@ -59,7 +59,17 @@ $(function() {
                         gutter: 20
                     }
                 });
-            }
+                //console.log(data);
+                if(data.status == 'failed') {
+                  //  console.log("no answer from server");
+                    urlDefault = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'img/4.jpg', 'img/5.jpg', 'img/6.jpg', 'img/7.jpg'];
+                    for (i = 0; i <= 6; i++) {
+                        url1 = urlDefault[i];
+                        $('.grid-item').eq(i).css("background-image", "url('"+decodeURI(url1)+"')");
+                        $('.ideas__text').eq(i).text('no answer from server');
+                    }
+                }
+            },
         });
     }
 
