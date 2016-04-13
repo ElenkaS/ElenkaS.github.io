@@ -205,7 +205,8 @@ header {
 .grid-item {
   width: 32.5%;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  border: 2px solid #777777; }
 
 .w2 {
   width: 65%; }

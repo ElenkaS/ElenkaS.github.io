@@ -19,10 +19,13 @@
         <script type="text/javascript" src="js/script.js"></script>
     <![endif]-->
     <!--[if lte IE 8]>
+    <script type="text/javascript" src="js/tmpl.js"></script>
+    <script src="js/isotope.pkgd.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
     <![endif]-->
-
+    <script type="text/javascript" src="js/tmpl.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+
 
  </head>
  <body>
@@ -149,7 +152,7 @@
              <div class="ideas__wrapper">
                  <h5 class="ideas__title">Discover holiday activity ideas</h5>
                  <div class="ideas__image-wrapper grid clearfix">
-                     <div class="ideas__image grid-item gutter-sizer">
+                     <!--<div class="ideas__image grid-item gutter-sizer">
                          <span class="ideas__text"></span>
                      </div>
                      <div class="ideas__image grid-item">
@@ -169,7 +172,8 @@
                      </div>
                      <div class="ideas__image grid-item">
                          <span class="ideas__text"></span>
-                     </div>
+                     </div>-->
+
                  </div>
                  <h5 class="ideas__title">Discover holiday activity ideas</h5>
                   <form class="ideas__form">
@@ -203,4 +207,16 @@
           </div>
       </footer>
 </body>
+<script type="text/html" id = "list">
+
+    <% for (var i =0; i<(images.length); i++) { %>
+    <div class="grid-item ideas__image <% if (i==0){%> <%}%>
+                            <% if ((i==1)){%> gutter-sizer <%}%>
+				                <% if ((i==4)||(i==5)){%> w2 <%}%>" style = "background: url(<%=images[i]%>) center no-repeat; background-size: cover">
+        <span class="ideas__text"><%=words[i]%></span>
+    </div>
+
+    <%}; %>
+
+</script>
 </html>
