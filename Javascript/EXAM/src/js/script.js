@@ -57,13 +57,13 @@ $(function () {
                 }
 
                 for (i = 0; i <= ((data.images.length - 1)); i++) {
-                    console.log('amount',amount);
-                    console.log('l',data.images.length);
+                   // console.log('amount',amount);
+                    //console.log('l',data.images.length);
                     images.push(data.images[i].imageurl);
                     words.push(data.images[i].word)
                 }
 
-                console.log(images);
+                //console.log(images);
 
                 if (loadImagesImmediatly) {
                     loadImage();
